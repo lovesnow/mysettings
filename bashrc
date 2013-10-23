@@ -150,3 +150,4 @@ PS1="\n\
 
 export GOPATH=$HOME/gocode
 export PATH=${PATH}:${GOPATH}/bin
+source $HOME/.django_bash_completion.sh
