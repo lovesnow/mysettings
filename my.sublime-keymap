@@ -97,8 +97,8 @@
 	{ "keys": ["alt+shift+right"], "command": "move", "args": {"by": "subword_ends", "forward": true, "extend": true} },
 
 	// 标记行
-	{ "keys": ["alt+shift+p"], "command": "select_lines", "args": {"forward": false} },
-	{ "keys": ["alt+shift+n"], "command": "select_lines", "args": {"forward": true} },
+	{ "keys": ["super+alt+m"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["super+alt+n"], "command": "select_lines", "args": {"forward": true} },
 
 	// 翻页
 	{ "keys": ["pageup"], "command": "move", "args": {"by": "pages", "forward": false} },
@@ -299,7 +299,7 @@
 	{ "keys": ["alt+shift+n"], "command": "delete_word", "args": { "forward": false } },
 	{ "keys": ["ctrl+shift+backspace"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard BOL.sublime-macro"} },
 	{ "keys": ["alt+shift+m"], "command": "delete_word", "args": { "forward": true } },
-	{ "keys": ["ctrl+shift+delete"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} },
+	{ "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} },
 
 	// 注释
 	{ "keys": ["ctrl+shift+;"], "command": "toggle_comment", "args": { "block": false } },
