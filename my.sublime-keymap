@@ -1,0 +1,356 @@
+// deepin-emacs按键转化
+[
+
+	// 退出
+	{ "keys": ["ctrl+q"], "command": "exit" },
+
+	//　打开新窗口
+	{ "keys": ["ctrl+shift+n"], "command": "new_window" },
+
+	//　关闭新窗口
+	{ "keys": ["ctrl+shift+w"], "command": "close_window" },
+
+	// 打开文件对话框
+	{ "keys": ["ctrl+o"], "command": "prompt_open_file" },
+
+	//　重新打开上次的文件
+	{ "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
+
+	// todo
+	{ "keys": ["alt+o"], "command": "switch_file", "args": {"extensions": ["cpp", "cxx", "cc", "c", "hpp", "hxx", "h", "ipp", "inl", "m", "mm"]} },
+
+	//　新建空白文件
+	{ "keys": ["super+n"], "command": "new_file" },
+
+	// 保存内容
+	{ "keys": ["ctrl+s"], "command": "save" },	
+
+	// 另存为
+	{ "keys": ["ctrl+shift+s"], "command": "prompt_save_as" },
+
+	// 关闭文件
+	{ "keys": ["ctrl+shift+x"], "command": "close_file" },
+
+	// 打开或隐藏侧边栏
+	{ "keys": ["ctrl+k", "b"], "command": "toggle_side_bar" },
+
+	// 全屏
+	{ "keys": ["f11"], "command": "toggle_full_screen" },
+
+	//　打开或隐藏额外内容
+	{ "keys": ["shift+f11"], "command": "toggle_distraction_free" },
+
+	//　正常操作
+	{ "keys": ["backspace"], "command": "left_delete" },
+	{ "keys": ["shift+backspace"], "command": "left_delete" },
+	{ "keys": ["ctrl+shift+backspace"], "command": "left_delete" },
+	{ "keys": ["delete"], "command": "right_delete" },
+	{ "keys": ["enter"], "command": "insert", "args": {"characters": "\n"} },
+	{ "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} },
+	{ "keys": ["keypad_enter"], "command": "insert", "args": {"characters": "\n"} },
+	{ "keys": ["shift+keypad_enter"], "command": "insert", "args": {"characters": "\n"} },
+
+	// 撤销操作　
+	{ "keys": ["ctrl+/"], "command": "undo" },
+	{ "keys": ["ctrl+shift+/"], "command": "redo" },
+	{ "keys": ["ctrl+y"], "command": "redo_or_repeat" },
+	{ "keys": ["ctrl+u"], "command": "soft_undo" },
+	{ "keys": ["ctrl+shift+u"], "command": "soft_redo" },
+
+    // 复制粘贴键
+	{ "keys": ["shift+delete"], "command": "cut" },
+	{ "keys": ["ctrl+insert"], "command": "copy" },
+	{ "keys": ["shift+insert"], "command": "paste" },
+
+	// 常见复制粘贴键
+	{ "keys": ["ctrl+x"], "command": "cut" },
+	{ "keys": ["ctrl+c"], "command": "copy" },
+	{ "keys": ["ctrl+v"], "command": "paste" },
+	{ "keys": ["ctrl+shift+v"], "command": "paste_and_indent" },
+
+	// 换行
+	{ "keys": ["ctrl+l"], "command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"} },
+	{ "keys": ["ctrl+shift+enter"], "command": "run_macro_file", "args": {"file": "Packages/Default/Add Line Before.sublime-macro"} },
+
+	// 单光标移动操作
+	{ "keys": ["ctrl+b"], "command": "move", "args": {"by": "characters", "forward": false} },
+	{ "keys": ["ctrl+f"], "command": "move", "args": {"by": "characters", "forward": true} },
+	{ "keys": ["ctrl+p"], "command": "move", "args": {"by": "lines", "forward": false} },
+	{ "keys": ["ctrl+n"], "command": "move", "args": {"by": "lines", "forward": true} },
+
+	// 移动选中操作
+	{ "keys": ["ctrl+shift+b"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
+	{ "keys": ["ctrl+shift+f"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
+	{ "keys": ["ctrl+shift+p"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
+	{ "keys": ["ctrl+shift+n"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
+
+	// 移动或选中一个单词
+	{ "keys": ["alt+b"], "command": "move", "args": {"by": "words", "forward": false} },
+	{ "keys": ["alt+f"], "command": "move", "args": {"by": "word_ends", "forward": true} },
+	{ "keys": ["ctrl+shift+left"], "command": "move", "args": {"by": "words", "forward": false, "extend": true} },
+	{ "keys": ["ctrl+shift+right"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true} },
+
+	// 移动或选中一个单词
+	{ "keys": ["alt+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
+	{ "keys": ["alt+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+	{ "keys": ["alt+shift+left"], "command": "move", "args": {"by": "subwords", "forward": false, "extend": true} },
+	{ "keys": ["alt+shift+right"], "command": "move", "args": {"by": "subword_ends", "forward": true, "extend": true} },
+
+	// 标记行
+	{ "keys": ["alt+shift+p"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["alt+shift+n"], "command": "select_lines", "args": {"forward": true} },
+
+	// 翻页
+	{ "keys": ["pageup"], "command": "move", "args": {"by": "pages", "forward": false} },
+	{ "keys": ["pagedown"], "command": "move", "args": {"by": "pages", "forward": true} },
+	{ "keys": ["shift+pageup"], "command": "move", "args": {"by": "pages", "forward": false, "extend": true} },
+	{ "keys": ["shift+pagedown"], "command": "move", "args": {"by": "pages", "forward": true, "extend": true} },
+
+	// 移动到行
+	{ "keys": ["ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+	{ "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+	{ "keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+	{ "keys": ["ctrl+home"], "command": "move_to", "args": {"to": "bof", "extend": false} },
+	{ "keys": ["ctrl+end"], "command": "move_to", "args": {"to": "eof", "extend": false} },
+	{ "keys": ["ctrl+shift+home"], "command": "move_to", "args": {"to": "bof", "extend": true} },
+	{ "keys": ["ctrl+shift+end"], "command": "move_to", "args": {"to": "eof", "extend": true} },
+
+	// 不移动光标　只移动显示比例
+	{ "keys": ["ctrl+up"], "command": "scroll_lines", "args": {"amount": 1.0 } },
+	{ "keys": ["ctrl+down"], "command": "scroll_lines", "args": {"amount": -1.0 } },
+
+	// 快速切换标签
+	{ "keys": ["alt+8"], "command": "next_view" },
+	{ "keys": ["alt+7"], "command": "prev_view" },
+	{ "keys": ["ctrl+tab"], "command": "next_view_in_stack" },
+	{ "keys": ["ctrl+shift+tab"], "command": "prev_view_in_stack" },
+
+	// 全选
+	{ "keys": ["ctrl+shift+a"], "command": "select_all" },
+
+	{ "keys": ["ctrl+shift+l"], "command": "split_selection_into_lines" },
+
+	// 关闭对话框
+	{ "keys": ["escape"], "command": "single_selection", "context":
+		[
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+		]
+	},
+	{ "keys": ["escape"], "command": "clear_fields", "context":
+		[
+			{ "key": "has_next_field", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["escape"], "command": "clear_fields", "context":
+		[
+			{ "key": "has_prev_field", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["escape"], "command": "hide_panel", "args": {"cancel": true},
+		"context":
+		[
+			{ "key": "panel_visible", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["escape"], "command": "hide_overlay", "context":
+		[
+			{ "key": "overlay_visible", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["escape"], "command": "hide_auto_complete", "context":
+		[
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": true }
+		]
+	},
+
+	// TAB键设置
+	{ "keys": ["tab"], "command": "insert_best_completion", "args": {"default": "\t", "exact": true} },
+	{ "keys": ["tab"], "command": "insert_best_completion", "args": {"default": "\t", "exact": false},
+		"context":
+		[
+			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["tab"], "command": "replace_completion_with_next_completion", "context":
+		[
+			{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["tab"], "command": "reindent", "context":
+		[
+			{ "key": "setting.auto_indent", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+			{ "key": "following_text", "operator": "regex_match", "operand": "^$", "match_all": true }
+		]
+	},
+	{ "keys": ["tab"], "command": "indent", "context":
+		[
+			{ "key": "text", "operator": "regex_contains", "operand": "\n" }
+		]
+	},
+	{ "keys": ["tab"], "command": "next_field", "context":
+		[
+			{ "key": "has_next_field", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["tab"], "command": "commit_completion", "context":
+		[
+			{ "key": "auto_complete_visible" },
+			{ "key": "setting.auto_complete_commit_on_tab" }
+		]
+	},
+	{ "keys": ["shift+tab"], "command": "insert", "args": {"characters": "\t"} },
+	{ "keys": ["shift+tab"], "command": "unindent", "context":
+		[
+			{ "key": "setting.shift_tab_unindent", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["shift+tab"], "command": "unindent", "context":
+		[
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^[\t ]*" }
+		]
+	},
+	{ "keys": ["shift+tab"], "command": "unindent", "context":
+		[
+			{ "key": "text", "operator": "regex_contains", "operand": "\n" }
+		]
+	},
+	{ "keys": ["shift+tab"], "command": "prev_field", "context":
+		[
+			{ "key": "has_prev_field", "operator": "equal", "operand": true }
+		]
+	},
+
+	// 增加或撤销间距
+	{ "keys": ["ctrl+]"], "command": "indent" },
+	{ "keys": ["ctrl+["], "command": "unindent" },
+
+	{ "keys": ["insert"], "command": "toggle_overwrite" },
+
+	//{ "keys": ["ctrl+l"], "command": "expand_selection", "args": {"to": "line"} },
+
+	// 批量选中并修改
+	{ "keys": ["ctrl+d"], "command": "find_under_expand" },
+	{ "keys": ["ctrl+k", "ctrl+d"], "command": "find_under_expand_skip" },
+
+	{ "keys": ["ctrl+shift+space"], "command": "expand_selection", "args": {"to": "scope"} },
+
+	// 选中括号内的文字
+	{ "keys": ["ctrl+shift+m"], "command": "expand_selection", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+m"], "command": "move_to", "args": {"to": "brackets"} },
+
+
+	{ "keys": ["ctrl+shift+j"], "command": "expand_selection", "args": {"to": "indentation"} },
+	{ "keys": ["ctrl+shift+u"], "command": "expand_selection", "args": {"to": "tag"} },
+
+	// todo
+	{ "keys": ["alt+."], "command": "close_tag" },
+
+	// 键盘宏
+	{ "keys": ["super+alt+s"], "command": "toggle_record_macro" },
+	{ "keys": ["super+alt+d"], "command": "run_macro" },
+	{ "keys": ["ctrl+enter"], "command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"} },
+	{ "keys": ["ctrl+shift+enter"], "command": "run_macro_file", "args": {"file": "Packages/Default/Add Line Before.sublime-macro"} },
+	{ "keys": ["enter"], "command": "commit_completion", "context":
+		[
+			{ "key": "auto_complete_visible" },
+			{ "key": "setting.auto_complete_commit_on_tab", "operand": false }
+		]
+	},
+
+	// 查找项目文件 函数
+	{ "keys": ["ctrl+alt+o"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+	{ "keys": ["ctrl+alt+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+	{ "keys": ["ctrl+alt+m"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+	{ "keys": ["ctrl+alt+p"], "command": "prompt_select_project" },
+	{ "keys": ["ctrl+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
+	{ "keys": ["ctrl+;"], "command": "show_overlay", "args": {"overlay": "goto", "text": ";"} },
+
+	// 查找替换
+	{ "keys": ["ctrl+i"], "command": "show_panel", "args": {"panel": "incremental_find", "reverse":false} },
+	{ "keys": ["ctrl+shift+i"], "command": "show_panel", "args": {"panel": "incremental_find", "reverse":true} },
+	{ "keys": ["super+y"], "command": "show_panel", "args": {"panel": "find"} },
+	{ "keys": ["ctrl+h"], "command": "show_panel", "args": {"panel": "replace"} },
+	{ "keys": ["ctrl+shift+h"], "command": "replace_next" },
+	{ "keys": ["f3"], "command": "find_next" },
+	{ "keys": ["shift+f3"], "command": "find_prev" },
+	{ "keys": ["ctrl+f3"], "command": "find_under" },
+	{ "keys": ["ctrl+shift+f3"], "command": "find_under_prev" },
+	{ "keys": ["alt+f3"], "command": "find_all_under" },
+	{ "keys": ["ctrl+shift+alt+e"], "command": "slurp_find_string" },
+	{ "keys": ["ctrl+shift+e"], "command": "slurp_replace_string" },
+	{ "keys": ["super+u"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+	{ "keys": ["f4"], "command": "next_result" },
+	{ "keys": ["shift+f4"], "command": "prev_result" },
+
+	// 拼写检查
+	{ "keys": ["f6"], "command": "toggle_setting", "args": {"setting": "spell_check"} },
+	{ "keys": ["ctrl+f6"], "command": "next_misspelling" },
+	{ "keys": ["ctrl+shift+f6"], "command": "prev_misspelling" },
+
+	// 移动行
+	{ "keys": ["super+shift+p"], "command": "swap_line_up" },
+	{ "keys": ["super+shift+n"], "command": "swap_line_down" },
+
+	// 删除字符
+	{ "keys": ["alt+shift+n"], "command": "delete_word", "args": { "forward": false } },
+	{ "keys": ["ctrl+shift+backspace"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard BOL.sublime-macro"} },
+	{ "keys": ["alt+shift+m"], "command": "delete_word", "args": { "forward": true } },
+	{ "keys": ["ctrl+shift+delete"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} },
+
+	// 注释
+	{ "keys": ["ctrl+shift+;"], "command": "toggle_comment", "args": { "block": false } },
+	//{ "keys": ["ctrl+shift+/"], "command": "toggle_comment", "args": { "block": true } },
+
+	// 删除后面的空格
+	{ "keys": ["ctrl+j"], "command": "join_lines" },
+
+	// 重复行
+	{ "keys": ["ctrl+shift+l"], "command": "duplicate_line" },
+
+	// 打开Python console
+	{ "keys": ["ctrl+`"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+
+	// 自动补全
+	{ "keys": ["alt+/"], "command": "auto_complete" },
+	{ "keys": ["alt+/"], "command": "replace_completion_with_auto_complete", "context":
+		[
+			{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
+			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
+		]
+	},
+
+	// 显示文件格式
+	{ "keys": ["ctrl+alt+shift+p"], "command": "show_scope_name" },
+
+	// 编译运行
+	{ "keys": ["f7"], "command": "build" },
+	//{ "keys": ["ctrl+b"], "command": "build" },
+	{ "keys": ["ctrl+shift+b"], "command": "build", "args": {"variant": "Run"} },
+	{ "keys": ["ctrl+break"], "command": "exec", "args": {"kill": true} },
+	{ "keys": ["ctrl+t"], "command": "transpose" },
+
+	// 行排序
+	{ "keys": ["f9"], "command": "sort_lines", "args": {"case_sensitive": false} },
+	{ "keys": ["ctrl+f9"], "command": "sort_lines", "args": {"case_sensitive": true} },
+
+	// 标签管理
+	{ "keys": ["f2"], "command": "next_bookmark" },
+	{ "keys": ["shift+f2"], "command": "prev_bookmark" },
+	{ "keys": ["ctrl+f2"], "command": "toggle_bookmark" },
+	{ "keys": ["ctrl+shift+f2"], "command": "clear_bookmarks" },
+	{ "keys": ["alt+f2"], "command": "select_all_bookmarks" },
+
+	// 大小字转换
+	{ "keys": ["alt+u"], "command": "upper_case" },
+	{ "keys": ["alt+l"], "command": "lower_case" },
+
+	// 展开代码块
+	{ "keys": ["ctrl+shift+["], "command": "fold" },
+	{ "keys": ["ctrl+shift+]"], "command": "unfold" }
+
+]
