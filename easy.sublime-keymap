@@ -1,0 +1,44 @@
+[
+	// 新建标签 ctrl+n
+	{ "keys": ["super+n"], "command": "new_file" }, 
+
+	// 关闭标签 
+	{ "keys": ["ctrl+shift+x"], "command": "close_file" },
+
+
+    // 搜索切换文件 ctrl+p
+	{ "keys": ["super+y"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+
+   
+	// 上下移动,选中
+	{ "keys": ["ctrl+p"], "command": "move", "args": {"by": "lines", "forward": false} },	
+	{ "keys": ["ctrl+n"], "command": "move", "args": {"by": "lines", "forward": true} },
+	{ "keys": ["ctrl+shift+p"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
+	{ "keys": ["ctrl+shift+n"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
+
+    // 打开package control,原命令为打开项目窗口
+	{ "keys": ["ctrl+alt+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+
+
+	// 搜索
+	{ "keys": ["ctrl+y"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
+	{ "keys": ["ctrl+shift+y"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+
+
+	// 全选
+	{ "keys": ["ctrl+shift+a"], "command": "select_all" },
+
+	// 左右移动，选中
+	{ "keys": ["ctrl+b"], "command": "move", "args": {"by": "characters", "forward": false} },
+	{ "keys": ["ctrl+f"], "command": "move", "args": {"by": "characters", "forward": true} },
+	{ "keys": ["ctrl+shift+b"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
+	{ "keys": ["ctrl+shift+f"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
+
+    // 移动行尾
+	{ "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+
+	// 快速切换标签
+	{ "keys": ["alt+8"], "command": "next_view" },
+	{ "keys": ["alt+7"], "command": "prev_view" },
+]
