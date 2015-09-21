@@ -41,4 +41,30 @@
 	// 快速切换标签
 	{ "keys": ["alt+8"], "command": "next_view" },
 	{ "keys": ["alt+7"], "command": "prev_view" },
+
+
+	// 新建一行
+	// { "keys": ["ctrl+l"], "command": "insert", "args": {"characters": "\n"} },
+	{ "keys": ["ctrl+l"], "command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"} },
+	{ "keys": ["ctrl+m"], "command": "insert", "args": {"characters": "\n"} },
+
+	// 删除字符
+	{ "keys": ["alt+shift+i"], "command": "left_delete" },
+	{ "keys": ["alt+shift+n"], "command": "delete_word", "args": { "forward": false } },
+	{ "keys": ["alt+shift+m"], "command": "delete_word", "args": { "forward": true } },
+	{ "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} },
+
+	// 撤销操作　
+	{ "keys": ["ctrl+/"], "command": "undo" },
+	{ "keys": ["ctrl+shift+/"], "command": "redo" },
+	// 注释
+	{ "keys": ["ctrl+shift+;"], "command": "toggle_comment", "args": { "block": false } },
+
+	// 移动或选中一个单词
+	{ "keys": ["alt+b"], "command": "move", "args": {"by": "words", "forward": false} },
+	{ "keys": ["alt+f"], "command": "move", "args": {"by": "word_ends", "forward": true} },
+
+	// 大小字转换
+	{ "keys": ["alt+u"], "command": "upper_case" },
+	{ "keys": ["alt+l"], "command": "lower_case" },
 ]
