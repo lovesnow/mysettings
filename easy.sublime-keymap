@@ -1,87 +1,104 @@
 [
-	// 新建标签 ctrl+n
-	{ "keys": ["super+n"], "command": "new_file" }, 
+    // 新建标签 ctrl+n
+    { "keys": ["super+n"], "command": "new_file" }, 
 
-	// 关闭标签 
-	{ "keys": ["ctrl+shift+x"], "command": "close_file" },
+    // 关闭标签 
+    { "keys": ["ctrl+w"], "command": "cut" },
+    { "keys": ["alt+c"], "command": "copy" },
+    { "Keys": ["ctrl+y"], "Command": "Paste" },
+    { "keys": ["ctrl+shift+l"], "command": "duplicate_line" },
+
+
+    // 保存文件
+    { "keys": ["ctrl+x", "s"], "command": "save" },
+    { "keys": ["ctrl+shift+l"], "command": "duplicate_line" },
+    { "keys": ["ctrl+;"], "command": "close"},
 
 
     // 搜索切换文件 ctrl+p
-	{ "keys": ["super+y"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    { "keys": ["super+y"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 
    
-	// 上下移动,选中
-	{ "keys": ["ctrl+p"], "command": "move", "args": {"by": "lines", "forward": false} },	
-	{ "keys": ["ctrl+n"], "command": "move", "args": {"by": "lines", "forward": true} },
-	{ "keys": ["ctrl+shift+p"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
-	{ "keys": ["ctrl+shift+n"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
+    // 上下移动,选中
+    { "keys": ["ctrl+p"], "command": "move", "args": {"by": "lines", "forward": false} },   
+    { "keys": ["ctrl+n"], "command": "move", "args": {"by": "lines", "forward": true} },
+    { "keys": ["ctrl+shift+p"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
+    { "keys": ["ctrl+shift+n"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
 
     // 打开package control,原命令为打开项目窗口
-	{ "keys": ["ctrl+alt+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+    { "keys": ["ctrl+alt+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
 
 
-	// 搜索
-	{ "keys": ["ctrl+y"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
-	{ "keys": ["ctrl+shift+y"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+    { "keys": ["ctrl+shift+y"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+ 
 
+    // 全选
+    { "keys": ["ctrl+shift+a"], "command": "select_all" },
 
-	// 全选
-	{ "keys": ["ctrl+shift+a"], "command": "select_all" },
-
-	// 左右移动，选中
-	{ "keys": ["ctrl+b"], "command": "move", "args": {"by": "characters", "forward": false} },
-	{ "keys": ["ctrl+f"], "command": "move", "args": {"by": "characters", "forward": true} },
-	{ "keys": ["ctrl+shift+b"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
-	{ "keys": ["ctrl+shift+f"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
+    // 左右移动，选中
+    { "keys": ["ctrl+b"], "command": "move", "args": {"by": "characters", "forward": false} },
+    { "keys": ["ctrl+f"], "command": "move", "args": {"by": "characters", "forward": true} },
+    { "keys": ["ctrl+shift+b"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
+    { "keys": ["ctrl+shift+f"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
 
     // 移动行尾
-	{ "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
     { "keys": ["ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
 
-	// 快速切换标签
-	{ "keys": ["alt+8"], "command": "next_view" },
-	{ "keys": ["alt+7"], "command": "prev_view" },
+
+    // 移动首尾
+    { "keys": ["ctrl+z", "k"], "command": "move_to", "args": {"to": "bof", "extend": false} },
+    { "keys": ["ctrl+z", "l"], "command": "move_to", "args": {"to": "eof", "extend": false} },
+
+    // 快速切换标签
+    { "keys": ["alt+7"], "command": "prev_view" },
+    { "keys": ["alt+8"], "command": "next_view" },
 
 
-	// 新建一行
-	// { "keys": ["ctrl+l"], "command": "insert", "args": {"characters": "\n"} },
-	{ "keys": ["ctrl+l"], "command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"} },
-	{ "keys": ["ctrl+m"], "command": "insert", "args": {"characters": "\n"} },
+    // 新建一行
+    // { "keys": ["ctrl+l"], "command": "insert", "args": {"characters": "\n"} },
+    { "keys": ["ctrl+l"], "command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"} },
+    { "keys": ["ctrl+m"], "command": "insert", "args": {"characters": "\n"} },
 
-	// 删除字符
-	{ "keys": ["alt+shift+i"], "command": "left_delete" },
-	{ "keys": ["alt+shift+n"], "command": "delete_word", "args": { "forward": false } },
-	{ "keys": ["alt+shift+m"], "command": "delete_word", "args": { "forward": true } },
-	{ "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} },
+    // 删除字符
+    { "keys": ["alt+shift+i"], "command": "left_delete" },
+    { "keys": ["alt+shift+n"], "command": "delete_word", "args": { "forward": false } },
+    { "keys": ["alt+shift+m"], "command": "delete_word", "args": { "forward": true } },
+    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} },
 
-	// 撤销操作　
-	{ "keys": ["ctrl+/"], "command": "undo" },
-	{ "keys": ["ctrl+shift+/"], "command": "redo" },
-	// 注释
-	{ "keys": ["ctrl+shift+;"], "command": "toggle_comment", "args": { "block": false } },
+    // 撤销操作　
+    { "keys": ["ctrl+/"], "command": "undo" },
+    { "keys": ["ctrl+shift+/"], "command": "redo" },
+    // 注释
+    { "keys": ["ctrl+shift+;"], "command": "toggle_comment", "args": { "block": false } },
 
-	// 移动或选中一个单词
-	{ "keys": ["alt+b"], "command": "move", "args": {"by": "words", "forward": false} },
-	{ "keys": ["alt+f"], "command": "move", "args": {"by": "word_ends", "forward": true} },
+    // 移动或选中一个单词
+    { "keys": ["alt+b"], "command": "move", "args": {"by": "words", "forward": false} },
+    { "keys": ["alt+f"], "command": "move", "args": {"by": "word_ends", "forward": true} },
 
-	// 大小字转换
-	{ "keys": ["alt+u"], "command": "upper_case" },
-	{ "keys": ["alt+l"], "command": "lower_case" },
+    // 大小字转换
+    { "keys": ["alt+u"], "command": "upper_case" },
+    { "keys": ["alt+l"], "command": "lower_case" },
 
-	// sublime filebrowser文件管理
-	{ "keys": ["f8"],"command": "dired", "args": { "immediate": true } },
-	
-	// 进入目录 
-	{
+    // sublemacs
+    {"keys": ["ctrl+x", "v"], "command": "sbp_pane_cmd", "args": {"cmd": "split", "stype": "h"}},
+    {"keys": ["ctrl+x", "h"], "command": "sbp_pane_cmd", "args": {"cmd": "split", "stype": "v"}},
+    {"keys": ["ctrl+x", ";"], "command": "sbp_pane_cmd", "args": {"cmd": "destroy", "pane": "self"}},
+
+    // sublime filebrowser文件管理 
+    { "keys": ["f8"],"command": "dired", "args": { "immediate": true } },
+    
+    // 进入目录 
+    {
       "keys": ["f"],
       "command": "dired_select", "args": {"other_group": true},
       "context": [
         { "key": "selector", "operator": "equal", "operand": "text.dired" },
         { "key": "setting.dired_rename_mode", "operand": false }
       ]
-  	},	
+    },  
 
-  	{
+    {
       "keys": ["+"],
       "command": "dired_create",
       "args": { "which": "directory" },
@@ -89,8 +106,8 @@
         { "key": "selector", "operator": "equal", "operand": "text.dired" },
         { "key": "setting.dired_rename_mode", "operand": false }
       ]
-  	},
-  	{
+    },
+    {
       "keys": ["E"],
       "command": "dired_create",
       "args": { "which": "file" },
@@ -98,31 +115,31 @@
         { "key": "selector", "operator": "equal", "operand": "text.dired" },
         { "key": "setting.dired_rename_mode", "operand": false }
       ]
-  	},
-  	{
+    },
+    {
       "keys": [";"],
       "command": "dired_up",
       "context": [
         { "key": "selector", "operator": "equal", "operand": "text.dired" },
         { "key": "setting.dired_rename_mode", "operand": false }
       ]
-  	},
-  	{
+    },
+    {
       "keys": ["d"],
       "command": "dired_delete", "args": {"trash": true},
       "context": [
         { "key": "selector", "operator": "equal", "operand": "text.dired" },
         { "key": "setting.dired_rename_mode", "operand": false }
       ]
- 	},
-  	{
+    },
+    {
     "keys": ["C"],
     "command": "dired_copy_files",
     "context": [
-        	{ "key": "selector", "operator": "equal", "operand": "text.dired" },
-        	{ "key": "setting.dired_rename_mode", "operand": false }
-    	]
-  	},
+            { "key": "selector", "operator": "equal", "operand": "text.dired" },
+            { "key": "setting.dired_rename_mode", "operand": false }
+        ]
+    },
   {
     "keys" : ["ctrl+c"],
     "command": "dired_rename_commit",
@@ -148,4 +165,4 @@
     ]
   },
 ]
-	
+    
