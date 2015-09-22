@@ -67,4 +67,85 @@
 	// 大小字转换
 	{ "keys": ["alt+u"], "command": "upper_case" },
 	{ "keys": ["alt+l"], "command": "lower_case" },
+
+	// sublime filebrowser文件管理
+	{ "keys": ["f8"],"command": "dired", "args": { "immediate": true } },
+	
+	// 进入目录 
+	{
+      "keys": ["f"],
+      "command": "dired_select", "args": {"other_group": true},
+      "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.dired" },
+        { "key": "setting.dired_rename_mode", "operand": false }
+      ]
+  	},	
+
+  	{
+      "keys": ["+"],
+      "command": "dired_create",
+      "args": { "which": "directory" },
+      "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.dired" },
+        { "key": "setting.dired_rename_mode", "operand": false }
+      ]
+  	},
+  	{
+      "keys": ["E"],
+      "command": "dired_create",
+      "args": { "which": "file" },
+      "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.dired" },
+        { "key": "setting.dired_rename_mode", "operand": false }
+      ]
+  	},
+  	{
+      "keys": [";"],
+      "command": "dired_up",
+      "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.dired" },
+        { "key": "setting.dired_rename_mode", "operand": false }
+      ]
+  	},
+  	{
+      "keys": ["d"],
+      "command": "dired_delete", "args": {"trash": true},
+      "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.dired" },
+        { "key": "setting.dired_rename_mode", "operand": false }
+      ]
+ 	},
+  	{
+    "keys": ["C"],
+    "command": "dired_copy_files",
+    "context": [
+        	{ "key": "selector", "operator": "equal", "operand": "text.dired" },
+        	{ "key": "setting.dired_rename_mode", "operand": false }
+    	]
+  	},
+  {
+    "keys" : ["ctrl+c"],
+    "command": "dired_rename_commit",
+    "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.dired" },
+        { "key": "setting.dired_rename_mode", "operand": true }
+    ]
+  },
+  {
+      "keys": ["r"],
+      "command": "dired_rename",
+      "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.dired" },
+        { "key": "setting.dired_rename_mode", "operand": false }
+      ]
+  },
+  {
+    "keys": ["a"],
+    "command": "dired_toggle_project_folder",
+    "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.dired" },
+        { "key": "setting.dired_rename_mode", "operand": false }
+    ]
+  },
 ]
+	
